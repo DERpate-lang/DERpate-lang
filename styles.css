@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Portfolio</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+.w3-third img{margin-bottom: -6px; opacity: 0.8; cursor: pointer}
+.w3-third img:hover{opacity: 1}
+</style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-white w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>MY PORTFOLIO</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button">PORTFOLIO</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">ABOUT ME</a> 
+  <a href="#contact" onclick="w3_close()" class="w3-bar-item w3-button">CONTACT</a>
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main" style="margin-left:300px">
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-container" id="portfolio">
+    <h2 class="w3-text-grey">My Work</h2>
+    <div class="w3-row-padding">
+      <div class="w3-third">
+        <img src="project1.jpg" style="width:100%" class="w3-hover-opacity">
+      </div>
+      <div class="w3-third">
+        <img src="project2.jpg" style="width:100%" class="w3-hover-opacity">
+      </div>
+      <div class="w3-third">
+        <img src="project3.jpg" style="width:100%" class="w3-hover-opacity">
+      </div>
+    </div>
+  </div>
+  
+  <!-- About Section -->
+  <div class="w3-container w3-dark-grey w3-padding-32" id="about">
+    <h2 class="w3-text-light-grey">About Me</h2>
+    <p>I am a passionate web developer and designer. I love creating modern, responsive websites.</p>
+  </div>
+  
+  <!-- Contact Section -->
+  <div class="w3-container w3-light-grey w3-padding-32" id="contact">
+    <h2>Contact Me</h2>
+    <form>
+      <input class="w3-input w3-border" type="text" placeholder="Name">
+      <input class="w3-input w3-border" type="email" placeholder="Email">
+      <textarea class="w3-input w3-border" placeholder="Message"></textarea>
+      <button class="w3-button w3-black w3-margin-top">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+</script>
+
+</body>
+</html>

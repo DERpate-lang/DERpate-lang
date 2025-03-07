@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Art Gallery</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: url('https://i.pinimg.com/736x/ba/77/ba/ba77ba2c5dd89ad81ee8eb30ade7f2e4.jpg') no-repeat center/cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0);
+            text-align: center;
+        }
+
+        input[type="text"] {
+            width: 250px;
+            padding: 12px;
+            border: 2px solid gold;
+            border-radius: 8px;
+            font-size: 16px;
+            background: #f5e6b5;
+            text-align: center;
+        }
+
+        button {
+            background: gold;
+            color: black;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #FFD700;
+            transform: scale(1.05);
+        }
+
+        .audio-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            transition: transform 0.2s;
+            box-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+
+        .play-icon, .pause-icon {
+            width: 30px;
+            height: 30px;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <input 
+            type="text" 
+            id="dateInput" 
+            placeholder="YYYY/MM/DD" 
+            oninput="formatDate(this)" 
+            required>
+        <button onclick="checkDate()">Enter</button>
+    </div>
+
+    <div class="audio-control" onclick="toggleMusic()">
+        <div id="musicIcon" class="play-icon"></div>
+    </div>
+
+    <audio id="backgroundMusic" loop>
+        <source src="C:\Users\Der pate\Downloads\انا ونور عيني\Art Gallery Music Playlist - A collection of calm classical piano performances" type="audio/mpeg">
+    </audio>
+
+    <script>
+        function formatDate(input) {
+            let value = input.value.replace(/\D/g, ''); 
+            let formatted = '';
+            
+            if (value.length > 4) {
+                formatted = value.slice(0,4) + '/' + value.slice(4,6) + '/' + value.slice(6,8);
+            } else if (value.length > 2) {
+                formatted = value.slice(0,4) + '/' + value.slice(4,6);
+            } else {
+                formatted = value.slice(0,4);
+            }
+            
+            input.value = formatted;
+        }
+
+        function checkDate() {
+            const input = document.getElementById('dateInput').value;
+            const cleanedDate = input.replace(/\//g, ''); 
+            const validDate = "20240509";
+            
+            if (cleanedDate === validDate && cleanedDate.length === 8) {
+                window.location.href = "gallery.html";
+            } else {
+                alert("Invalid Date! Use format YYYY/MM/DD");
+            }
+        }
+
+        let isPlaying = false;
+        const audio = document.getElementById('backgroundMusic');
+        const musicIcon = document.getElementById('musicIcon');
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicIcon.className = "play-icon";
+            } else {
+                audio.play();
+                musicIcon.className = "pause-icon";
+            }
+            isPlaying = !isPlaying;
+        }
+    </script>
+</body>
+</html>

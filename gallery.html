@@ -1,0 +1,133 @@
+حلل الكود الاتي :
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>تاريخنا</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
+body {
+  background: url('16.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #d4af37;
+}
+.w3-sidebar {
+  background: rgba(0, 0, 0, 0.8);
+  color: #d4af37;
+  font-size: 20px; 
+  position: fixed;;
+}
+.w3-main {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+.comment-box {
+  border: 1px solid #d4af37;
+  padding: 10px;
+  margin-top: 10px;
+  background: rgba(0, 0, 0, 0.7);
+  color: #d4af37;
+}
+.w3-button {
+  background: #d4af37 !important;
+  color: black !important;
+}
+#about p {
+  font-family: Arial, sans-serif;
+  font-size: 28px;
+  font-weight: bold;
+  color: #f0f0f0;
+}
+</style>
+</head>
+<body class="w3-light-grey w3-content" style="max-width:1600px">
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-bar-block w3-animate-left w3-text-grey w3-collapse w3-top w3-center" style="z-index:3;width:300px;font-weight:bold" id="mySidebar"><br>
+  <h3 class="w3-padding-64 w3-center"><b>تاريخنا</b></h3>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-bar-item w3-button w3-padding w3-hide-large">CLOSE</a>
+  <a href="#portfolio" onclick="w3_close()" class="w3-bar-item w3-button">تاريخنا</a> 
+  <a href="#about" onclick="w3_close()" class="w3-bar-item w3-button">والان ماذا عننا</a> 
+</nav>
+
+<!-- Page Content -->
+<div class="w3-main" style="margin-left:300px">
+  <button class="w3-button w3-xlarge w3-hide-large" onclick="w3_open()">☰</button>
+  <div class="w3-hide-large" style="margin-top:83px"></div>
+  
+  <!-- Portfolio Section -->
+  <div class="w3-container" id="portfolio">
+    <h2 class="w3-text-grey">My Work</h2>
+    <div class="w3-row-padding">
+      <!-- Images -->
+      <script>
+        for (let i = 1; i <= 15; i++) {
+          document.write(`<div class='w3-third'><img src='${i}.jpg' style='width:100%; cursor:pointer' onclick='openLightbox(this, ${i})'></div>`);
+        }
+      </script>
+    </div>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div id="lightbox" class="w3-modal" onclick="closeLightbox()">
+    <div class="w3-modal-content w3-animate-zoom w3-center" style="max-width:600px; padding:20px; background:#000; color:#d4af37;">
+      <span class="w3-button w3-xxlarge w3-display-topright" onclick="closeLightbox()">&times;</span>
+      <img id="lightbox-img" class="w3-image" style="width:100%">
+      <div id="lightbox-comment" class="comment-box"></div>
+    </div>
+  </div>
+  
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h2 class="w3-text-light-grey">About Me</h2>
+    <p>انا وانتي مرينا بكتير اوي سوا ومهما حصل هفضل مؤمن تمام الايمان ان مهما حصل بيني وبينك هنقرب من بعض اكتر الدنيا مهما حصل الدنيا لو فكرت تبعدنا عن بعض مهما تعبنا مهما كنت انا غبي هفضل دايما بحبك وبعبدك وشايفك الافضل ومش شايف غيرك اصلا 
+انا بعبدك انتي يا من ملكتي قلبي وروحي وعقلي اللهم لا تحرمني من حبك مهما حدث 
+نور انا في الاخر عايزك تفهمي ان مهما حصل انا ملكك وبتاعك اتمني منسيبش بعض واتمني لو في اي زعل مني نتعاتب ونتسامح وننسي ونبدا من جديد 
+</p>
+  </div>
+</div>
+
+<script>
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+const comments = {
+  1: "هنا كانت اول مره اعترفلك بحب دام حوالي سنه ونص حب صادق حقيقي خالص تماما ليكي لوحدك مهما حاولت اقول انه مكنش موجود وان احنا مجرد اخوات هكون كداب فعلا",
+  2: "هنا كان لما اعترفتي بحبك ليا هنا كانت اللحظه الي حسيت ان احد اكبر احلامي اتحقق بجد وانك اخيراااا وافقتي تبقي مراتي ",
+  3: "هنا كانت اول مره نتقابل انا وانتي هنا اتاكدت اني اخيرا عرفت اني اخيرا اخترت الشخص الصح هنا كانت قبل ما نرتبط ولكن من هنا وانا كل الي بعمله اني بخلي الموضوع حقيقه",
+  4: "هنا هنا كنا متعاركين مش طايقين بعض ولكن لما قابلتك كان كل دا اتحول لفراغ او كان بس حاجه جوانا هي الي كانت بتخلق عذر لاجل نتقابل ونحب بعض يوميها اول مره احضن بنت والحمد لله انها انتي ومش حد تاني ",
+  5: "بصي بصي فرحتنا بصي شكلنا بصي كنا حلوين اوي ازاي يا حياتي ",
+  6: "تالت لقاء اخر لقاء اعظم لقاء هنا كنا بنحاول نستمتع هنا كان اول ديت لينا هنا انا قلبي كان بيرقص من التوتر والفرحه ",
+  7: "اول لقاء لينا اتصورنا في الاتوبيس واحنا لسه مش سوا هنا كانت اعاده احياء للمشهد والي في المره التانيه انا كنت بجد مبسوط انه بتصور لاول مره احسني حلو وشكلي فعلا جذاب ",
+  8: "لا يوجد سواكي في عيوني لن يوجد سواكي في عيون لم يوجد سواكي في عيوني انتي وانتي وانتي فقط هو كل ما اريد ",
+  9: "اول هديه ليا في حياتي اعظم هديه ليا في حياتي كانت من ايدك انتي ودا بجد بيدوب قلبي وبيفرحني جدا ربنا ما يحرمني منك لحظه يا رب ",
+  10: "من اوائل الصور الي بعتهالي بشعرك ورقبتك ومن اوائل المرات الي احس فيها اني بجد دايب في حب انسانه ",
+  11: "هنا كنتي عملتي رموشك ومن هنا انا قولت اوف البنت دي لازم تبقي مراتي مينفعش مينفعش بجد الجمال دا حد غيري يشوفه يمكن وقتها انا مكنتش ارتبطت بيكي بس جمالك كان خلي كل حاجه اسرع بجد",
+  12: "هنا كانت في خروجتك مع مامتك وخالتو هنا وانتي لابسه دبلتي في رقبتك وباذن الله تبقي الدبله التانيه في ايدك هنا وانتي بتقنعيهم بيا ",
+  13: "أول صوره تقريبا بعتهالي من ساعه ارتباطنا وواحده من اجمل الصور في الدنيا ",
+  14: "هنا اسمحيلي اعيدلك نفس الكلام الي انا قولته ليكي وقتها : صورك فيها حاجه مميزه كدا حاجه حلوه اوي بجد معرفش عينك ولا ملامحك ولا ايه بس بجد بيبقي فيهم حاجه بجد بتسحر الي هو مبتعرفش تشيل عينك",
+  15: "هنا كانت أول مره تكتبيلي الكلمه دي ويارب ما يحرمني منها ابدا "
+};
+
+function openLightbox(img, index) {
+  document.getElementById("lightbox").style.display = "block";
+  document.getElementById("lightbox-img").src = img.src;
+  document.getElementById("lightbox-comment").textContent = comments[index] || "لا يوجد تعليق";
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>
